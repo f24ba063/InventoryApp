@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>在庫管理</title>
+</head>
+<body>
+    <h1>在庫管理</h1>
+
+    <h2>新規アイテム作成</h2>
+    <form id="item-form">
+        <input type="text" id="name" placeholder="名前" required>
+        <input type="number" id="quantity" placeholder="数量" required>
+        <input type="number" id="price" placeholder="価格" step="0.01" required>
+        <button type="submit">作成</button>
+        <button type="button" id="cancel-btn">キャンセル</button>
+    </form>
+
+    <h2>在庫一覧</h2>
+    <table border="1" id="item-table">
+        <thead>
+            <tr><th data-column="id" data-order="asc">ID</th>
+				<th data-column="name" data-order="asc">名前</th>
+				<th data-column="quantity" data-order="asc">数量</th>
+				<th data-column="price" data-order="asc">価格</th>
+				<th>操作</th>
+			</tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
