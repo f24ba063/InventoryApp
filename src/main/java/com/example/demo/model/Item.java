@@ -16,6 +16,15 @@ public class Item {
 	private int quantity;
 	private double price;
 	
+    // 引数なしコンストラクタ（JPA 必須）
+    public Item() {}
+
+    // 初期データ用コンストラクタ
+    public Item(String name, int quantity, double price) {
+        this.name = name;
+        this.quantity = quantity;
+        this.price = price;
+    }
 	public double getPrice() {
 		return price;
 	}
