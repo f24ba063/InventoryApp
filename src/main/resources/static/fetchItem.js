@@ -1,4 +1,5 @@
 import {setEditBtn} from './setEditBtn.js';
+import {setDeleteBtn} from '/\setDeleteBtn.js';
 
 const tableBody = document.querySelector("#item-table tbody");
 
@@ -32,37 +33,8 @@ export async function fetchItem(sortBy = "id", order = "asc"){
 			`;
 			tableBody.appendChild(tr);
 		});
-		
-		//編集・削除ボタンのイベント設定
-//		tableBody.querySelectorAll(".edit-btn").forEach(btn => {
-//			btn.addEventListener("click", (e) => {
-//				const tr = e.target.closest("tr");
-//				const id = e.target.dataset.id;
-//				const name = tr.children[1].textContent;
-//				const quantity = tr.children[2].textContent;
-//				const price = tr.children[3].textContent;
-//				setEditMode(id, name, quantity, price);
-//			});
-//		});
 
 		setEditBtn(tableBody);
-		
-//		tableBody.querySelectorAll(".delete-btn").forEach(btn=> {
-//			btn.addEventListener('click', async(e) => {
-//				const id = e.target.dataset.id;
-//				if(!confirm(`ID:${id}を削除しますか？`))return;
-//				
-//				try{
-//					const response = await fetch(`http://localhost:8080/api/items/${id}`, {
-//						method: "DELETE"
-//					});
-//					if(!response.ok)throw new Error("削除に失敗");
-//					fetchItem();
-//				}catch(err){
-//					console.error(err);
-//				}
-//			});
-//		});
 
 		setDeleteBtn(tableBody);
 		
